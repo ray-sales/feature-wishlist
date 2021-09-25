@@ -1,0 +1,10 @@
+
+block products
+    div(class="products")
+        each product in products 
+            div(class="products__product")
+                div(class="close")
+                    i(class="far fa-times-circle")
+                img(src=product.image)
+                p=product.title 
+                p=product.price
