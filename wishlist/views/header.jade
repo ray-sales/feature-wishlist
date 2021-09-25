@@ -1,7 +1,8 @@
 block header
     header 
         div(class="logo")
-            h2="Maganets"
+            a(href="/") 
+                h2="Maganets"
         section 
             div(class="menu")
                 div(class="menu__option")
@@ -11,7 +12,8 @@ block header
                     i(class="fas fa-phone-alt")
                     span="central de atendimento"
                 div(class="menu__option")
-                    i(class="fas fa-heart")
-                    span="lista de desejos"
+                    a(href="/wishlist")
+                        i(class="fas fa-heart")
+                        span="lista de desejos" 
             div(class="search")
                 input(type="text" placeholder="&#f002; Busca")

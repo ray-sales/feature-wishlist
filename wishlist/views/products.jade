@@ -2,7 +2,7 @@
 block products
     div(class="products")
         each product in products 
-            div(class="products__product")
+            div(class="products__product" id=product.id)
                 div(class="close")
                     i(class="far fa-times-circle")
                 img(src=product.image)
