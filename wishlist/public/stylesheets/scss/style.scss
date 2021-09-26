@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+    font-family: 'Mulish', sans-serif;
+    a {
+        text-decoration: none;
+        color: #fefaff;
+    }
+    i {
+        cursor: pointer
+    }
+    header {
+        background-color: #5a2d82;
+        color: #fefaff;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0.4rem 1.5rem 0.4rem;
+        .menu {
+            .option {
+                cursor: pointer;
+                i {
+                    margin-right: 0.5rem;
+                    &.fa-phone-alt {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+        .search-container {
+            padding-top: 0.5rem;
+            display: flex;
+            justify-content: center;
+            .search {
+                background-color: white;
+                border-radius: 0.2rem;
+                display: flex;
+                align-items: center;
+                padding-left: 0.5rem;
+                width: 22rem;
+                i {
+                    color: #a1a1a1;
+                }
+                input {
+                    border: none;
+                    outline: none;
+                    width: 98%;
+                    padding: 0.5rem;
+                    border-radius: 0.2rem;
+                    font-weight: 900
+                }
+            }
+        }
+    }
+    main {
+        margin: auto;
+        padding: 2rem 1rem 1rem 1rem;
+        width: min(90vw, 910px);
+        .products-container {
+            width: 100%;
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            .product {
+                background-color: #ffffff;
+                width: 12.5rem;
+                height: 21rem;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                box-shadow: 0.5px 0.5px 0.5px 1px #a1a1a1;
+                border-radius: 0.2rem;
+                padding: 1rem;
+                margin: 0.2rem;
+                margin-bottom: 0.8rem;
+                .favorite-remove {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    font-size: 1.5rem;
+                    padding-bottom: 1rem;
+                }
+                .favorite {
+                    width: 2.2rem;
+                    height: 3rem;
+                    margin-top: -1.25rem;
+                    margin-left: -0.7rem;
+                    background-color: black;
+                    color: #fefaff;
+                    border-radius: 0.2rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    clip-path: polygon(0 0, 100% 0, 100% 79%, 50% 100%, 0 79%)
+                }
+                .favorite-selected {
+                    color: red;
+                }
+                p {
+                    font-weight: bold;
+                    margin-top: 1rem;
+                    &:last-child {
+                        margin-top: 2rem;
+                        color: #e7d51c;
+                    }
+                }
+            }
+        }
+        .error {
+            display: flex;
+            flex-direction: column;
+            padding-top: 2rem;
+            align-items: center;
+        }
+    }
+    @media(min-width: 910px) {
+        header {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 2.5rem 6rem 0.5rem 2rem;
+            .logo {
+                width: 25%;
+                padding-left: 10rem;
+            }
+            section {
+                width: 65%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                .menu {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                    padding-bottom: 0.5rem;
+                }
+                .search-container {
+                    width: 100%;
+                    text-align: end;
+                    padding-bottom: 1.5rem;
+                    .search {
+                        width: 100% !important;
+                        input {
+                            width: 98% !important;
+                            align-self: flex-end;
+                        }
+                    }
+                }
+            }
+        }
+        main {
+            width: 70vw;
+            padding: 2rem 1.2rem;
+            .products-container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                justify-items: center;
+            }
+        }
+    }
+}

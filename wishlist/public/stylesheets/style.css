@@ -1,25 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;800&display=swap");
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-a {
+body {
+    background: #ffffff;
+    font-family: "Mulish", sans-serif;
+}
+
+body a {
     text-decoration: none;
     color: #fefaff;
 }
 
-i {
-    cursor: pointer
+body i {
+    cursor: pointer;
 }
 
-body {
-    background: #ffffff;
-    font-family: 'Mulish', sans-serif;
-}
-
-header {
+body header {
     background-color: #5a2d82;
     color: #fefaff;
     display: flex;
@@ -28,13 +28,25 @@ header {
     padding: 1rem 0.4rem 1.5rem 0.4rem;
 }
 
-header .search-container {
+body header .menu .option {
+    cursor: pointer;
+}
+
+body header .menu .option i {
+    margin-right: 0.5rem;
+}
+
+body header .menu .option i.fa-phone-alt {
+    transform: rotate(90deg);
+}
+
+body header .search-container {
     padding-top: 0.5rem;
     display: flex;
     justify-content: center;
 }
 
-header .search-container .search {
+body header .search-container .search {
     background-color: white;
     border-radius: 0.2rem;
     display: flex;
@@ -43,26 +55,26 @@ header .search-container .search {
     width: 22rem;
 }
 
-.search i {
+body header .search-container .search i {
     color: #a1a1a1;
 }
 
-.search input {
+body header .search-container .search input {
     border: none;
     outline: none;
     width: 98%;
     padding: 0.5rem;
     border-radius: 0.2rem;
-    font-weight: 900
+    font-weight: 900;
 }
 
-main {
+body main {
     margin: auto;
     padding: 2rem 1rem 1rem 1rem;
     width: min(90vw, 910px);
 }
 
-.products-container {
+body main .products-container {
     width: 100%;
     margin-top: 2rem;
     display: flex;
@@ -71,56 +83,28 @@ main {
     align-items: flex-start;
 }
 
-.product {
+body main .products-container .product {
     background-color: #ffffff;
     width: 12.5rem;
-    margin-bottom: 1rem;
+    height: 21rem;
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 0.5rem;
     box-shadow: 0.5px 0.5px 0.5px 1px #a1a1a1;
     border-radius: 0.2rem;
-}
-
-header .menu .option {
-    cursor: pointer;
-}
-
-header .menu .option i {
-    margin-right: 0.5rem;
-}
-
-header .menu .option i.fa-phone-alt {
-    transform: rotate(90deg);
-}
-
-.product {
     padding: 1rem;
-    height: 21rem;
-    align-self: center;
     margin: 0.2rem;
     margin-bottom: 0.8rem;
 }
 
-.product .favorite-remove {
+body main .products-container .product .favorite-remove {
     display: flex;
     flex-direction: row-reverse;
     font-size: 1.5rem;
     padding-bottom: 1rem;
 }
 
-.product p {
-    font-weight: bold;
-    margin-top: 1rem;
-}
-
-.product p:last-child {
-    margin-top: 2rem;
-    color: #e7d51c;
-}
-
-.favorite {
+body main .products-container .product .favorite {
     width: 2.2rem;
     height: 3rem;
     margin-top: -1.25rem;
@@ -132,63 +116,74 @@ header .menu .option i.fa-phone-alt {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    clip-path: polygon(0 0, 100% 0, 100% 79%, 50% 100%, 0 79%)
+    clip-path: polygon(0 0, 100% 0, 100% 79%, 50% 100%, 0 79%);
 }
 
-.favorite-selected {
+body main .products-container .product .favorite-selected {
     color: red;
 }
 
-.error {
+body main .products-container .product p {
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+body main .products-container .product p:last-child {
+    margin-top: 2rem;
+    color: #e7d51c;
+}
+
+body main .error {
     display: flex;
     flex-direction: column;
     padding-top: 2rem;
     align-items: center;
 }
 
-@media(min-width: 910px) {
-    main {
-        width: 70vw;
-    }
-    header {
+@media (min-width: 910px) {
+    body header {
         flex-direction: row;
         justify-content: space-between;
         padding: 2.5rem 6rem 0.5rem 2rem;
     }
-    header .logo {
+    body header .logo {
         width: 25%;
         padding-left: 10rem;
     }
-    header .search-container {
-        width: 100%;
-        text-align: end;
-        padding-bottom: 1.5rem;
-    }
-    .search-container .search {
-        width: 100% !important;
-    }
-    .search input {
-        width: 98% !important;
-        align-self: flex-end;
-    }
-    header section {
+    body header section {
         width: 65%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
     }
-    header .menu {
+    body header section .menu {
         display: flex;
         width: 100%;
         justify-content: space-between;
         padding-bottom: 0.5rem;
     }
-    main {
+    body header section .search-container {
+        width: 100%;
+        text-align: end;
+        padding-bottom: 1.5rem;
+    }
+    body header section .search-container .search {
+        width: 100% !important;
+    }
+    body header section .search-container .search input {
+        width: 98% !important;
+        align-self: flex-end;
+    }
+    body main {
+        width: 70vw;
         padding: 2rem 1.2rem;
     }
-    .products-container {
+    body main .products-container {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
         justify-items: center;
     }
 }
+
+
+/*# sourceMappingURL=style.css.map */
