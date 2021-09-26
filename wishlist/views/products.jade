@@ -1,14 +1,15 @@
 
 block products
-    div(class="products")
+    div(class="products-container")
         each product in products 
-            div(class="products__product" id=product.id)
+            div(class="product" id=product.id)
                 if(title == "Wishlist")
-                    div(class="remove")
+                    div(class="favorite-remove")
                         i(class="far fa-times-circle")
                 else
                     div(class="favorite")
                         i(class="fas fa-heart")
                 img(src=product.image)
                 p=product.title 
-                p=product.price
+                - money = product.price.toLocaleString("pt-BR", {style: 'currency', currency: "BRL"})
+                p=money

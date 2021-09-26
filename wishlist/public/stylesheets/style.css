@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;800&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -9,9 +10,13 @@ a {
     color: #fefaff;
 }
 
+i {
+    cursor: pointer
+}
+
 body {
     background: #ffffff;
-    font-family: 'Poppins', 'sans-serif';
+    font-family: 'Mulish', sans-serif;
 }
 
 header {
@@ -20,28 +25,44 @@ header {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-top: 1rem;
+    padding: 1rem 0.4rem 1.5rem 0.4rem;
 }
 
-header .search {
-    padding: 0.5rem 0 1.5rem 0;
+header .search-container {
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: center;
 }
 
-header .search input {
+header .search-container .search {
+    background-color: white;
+    border-radius: 0.2rem;
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    width: 22rem;
+}
+
+.search i {
+    color: #a1a1a1;
+}
+
+.search input {
     border: none;
     outline: none;
-    width: 20rem;
+    width: 98%;
     padding: 0.5rem;
     border-radius: 0.2rem;
+    font-weight: 900
 }
 
 main {
     margin: auto;
     padding: 2rem 1rem 1rem 1rem;
-    width: min(90vw, 800px);
+    width: min(90vw, 910px);
 }
 
-.products {
+.products-container {
     width: 100%;
     margin-top: 2rem;
     display: flex;
@@ -50,7 +71,7 @@ main {
     align-items: flex-start;
 }
 
-.products__product {
+.product {
     background-color: #ffffff;
     width: 12.5rem;
     margin-bottom: 1rem;
@@ -62,32 +83,39 @@ main {
     border-radius: 0.2rem;
 }
 
-header .menu__option {
+header .menu .option {
     cursor: pointer;
 }
 
-header .menu__option i {
+header .menu .option i {
     margin-right: 0.5rem;
 }
 
-.products__product {
-    padding: 1rem;
-    height: 21rem;
+header .menu .option i.fa-phone-alt {
+    transform: rotate(90deg);
 }
 
-.products__product .remove {
+.product {
+    padding: 1rem;
+    height: 21rem;
+    align-self: center;
+    margin: 0.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.product .favorite-remove {
     display: flex;
     flex-direction: row-reverse;
     font-size: 1.5rem;
     padding-bottom: 1rem;
 }
 
-.products__product p {
+.product p {
     font-weight: bold;
     margin-top: 1rem;
 }
 
-.products__product p:last-child {
+.product p:last-child {
     margin-top: 2rem;
     color: #e7d51c;
 }
@@ -107,11 +135,18 @@ header .menu__option i {
     clip-path: polygon(0 0, 100% 0, 100% 79%, 50% 100%, 0 79%)
 }
 
-.favorite--selected {
+.favorite-selected {
     color: red;
 }
 
-@media(min-width: 800px) {
+.error {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    align-items: center;
+}
+
+@media(min-width: 910px) {
     main {
         width: 70vw;
     }
@@ -124,16 +159,17 @@ header .menu__option i {
         width: 25%;
         padding-left: 10rem;
     }
-    header .search,
-    .search input {
-        width: 100% !important;
-        font-family: 'FontAwesome';
+    header .search-container {
+        width: 100%;
+        text-align: end;
+        padding-bottom: 1.5rem;
     }
-    header .search i {
-        position: absolute;
-        color: blue;
-        padding-top: 0.5rem;
-        padding-left: 0.5rem;
+    .search-container .search {
+        width: 100% !important;
+    }
+    .search input {
+        width: 98% !important;
+        align-self: flex-end;
     }
     header section {
         width: 65%;
@@ -150,8 +186,9 @@ header .menu__option i {
     main {
         padding: 2rem 1.2rem;
     }
-    .products {
+    .products-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: center;
     }
 }
