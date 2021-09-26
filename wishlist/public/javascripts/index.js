@@ -12,6 +12,13 @@ const DOM = {
                 let content = event.target.value;
                 window.location.href = window.location.origin + `/search?content=${content}`;
             });
+
+            let telephone = document.querySelector(".fa-phone-alt");
+            telephone.parentElement.addEventListener("click", () => {
+                let phone = '0800 060 080';
+                navigator.clipboard.writeText(phone);
+                alert("Copied to clipboard: " + phone);
+            })
         } catch (e) {
             console.error("ERROR IN ADD EVENTS: " + e);
         }

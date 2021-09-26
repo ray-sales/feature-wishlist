@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;800&display=swap');
+:root {
+    --active: red;
+    --gray: #fefaff;
+    --purple: #5a2d82;
+    --dark-gray: #a1a1a1;
+    --background: #ffffff;
+    --details: #e7d51c;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,18 +15,18 @@
 }
 
 body {
-    background: #ffffff;
+    background: var(--background);
     font-family: 'Mulish', sans-serif;
     a {
         text-decoration: none;
-        color: #fefaff;
+        color: var(--gray)
     }
     i {
         cursor: pointer
     }
     header {
-        background-color: #5a2d82;
-        color: #fefaff;
+        background-color: var(--purple);
+        color: var(--gray);
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -38,14 +47,14 @@ body {
             display: flex;
             justify-content: center;
             .search {
-                background-color: white;
+                background-color: var(--background);
                 border-radius: 0.2rem;
                 display: flex;
                 align-items: center;
                 padding-left: 0.5rem;
                 width: 22rem;
                 i {
-                    color: #a1a1a1;
+                    color: var(--dark-gray);
                 }
                 input {
                     border: none;
@@ -53,7 +62,8 @@ body {
                     width: 98%;
                     padding: 0.5rem;
                     border-radius: 0.2rem;
-                    font-weight: 900
+                    font-weight: 900;
+                    font-family: 'Mulish', sans-serif;
                 }
             }
         }
@@ -70,13 +80,13 @@ body {
             justify-content: space-around;
             align-items: flex-start;
             .product {
-                background-color: #ffffff;
+                background-color: var(--background);
                 width: 12.5rem;
                 height: 21rem;
                 display: flex;
                 flex-direction: column;
                 text-align: center;
-                box-shadow: 0.5px 0.5px 0.5px 1px #a1a1a1;
+                box-shadow: 0.5px 0.5px 0.5px 1px var(--dark-gray);
                 border-radius: 0.2rem;
                 padding: 1rem;
                 margin: 0.2rem;
@@ -93,7 +103,7 @@ body {
                     margin-top: -1.25rem;
                     margin-left: -0.7rem;
                     background-color: black;
-                    color: #fefaff;
+                    color: var(--gray);
                     border-radius: 0.2rem;
                     display: flex;
                     justify-content: center;
@@ -102,14 +112,14 @@ body {
                     clip-path: polygon(0 0, 100% 0, 100% 79%, 50% 100%, 0 79%)
                 }
                 .favorite-selected {
-                    color: red;
+                    color: var(--active);
                 }
                 p {
                     font-weight: bold;
                     margin-top: 1rem;
                     &:last-child {
                         margin-top: 2rem;
-                        color: #e7d51c;
+                        color: var(--details);
                     }
                 }
             }
