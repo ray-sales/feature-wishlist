@@ -5,24 +5,11 @@ const DOM = {
         else
             Wishlist.addEvent(".favorite");
     },
-
-    addClass() {
-
-    }
 }
 
 const Wishlist = {
-    get() {
-        let data = await fetch("http://localhost:3000/api/wishlist", {
-                "method": "GET",
-                "headers": {}
-            })
-            .then(response => {
-                return response;
-            })
-            .catch(err => {
-                console.error(err);
-            });
+    list() {
+        let data = Utils.fetch("/api/wishlist", "GET").then(json => json);
         return data;
     },
 
@@ -61,17 +48,38 @@ const Wishlist = {
         })
     },
 
-    active() {
-
+    async active() {
+        let favoriteProducts = await this.list();
+        favoriteProducts.forEach(e => {
+            document.getElementById(e).children[0].classList.add("favorite--selected");
+        })
     }
 
+}
 
+const Utils = {
+    fetch(url, type, body = null) {
+        return fetch(url, {
+                "method": type,
+                "headers": {},
+                "body": body
+            })
+            .then(response => response.json())
+            .catch(err => {
+                console.error(err);
+            });
+    }
 }
 
 const App = {
     init() {
         DOM.addEvents();
-    }
+        this.home();
+    },
+    home() {
+        if (!window.location.href.includes("wishlist"))
+            Wishlist.active();
+    },
 }
 
 window.onload = App.init();

@@ -23,8 +23,11 @@ router.post("/remove-wishlist", (req, res) => {
 })
 
 router.get("/wishlist", (req, res) => {
+    console.log("## get");
+    console.log(req.cookies);
     let products = JSON.parse(req.cookies.products);
-    res.json(products);
+    console.log(products)
+    res.send(products);
 })
 
 module.exports = router;
