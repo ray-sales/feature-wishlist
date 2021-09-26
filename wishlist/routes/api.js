@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 router.post("/add-wishlist", (req, res) => {
+    console.log("add wish");
     let product = req.body.id;
     let products = [];
     if (req.cookies && req.cookies.products)
@@ -19,6 +20,11 @@ router.post("/remove-wishlist", (req, res) => {
     products.splice(index, 1);
     res.cookie("products", JSON.stringify(products));
     res.json("OK");
+})
+
+router.get("/wishlist", (req, res) => {
+    let products = JSON.parse(req.cookies.products);
+    res.json(products);
 })
 
 module.exports = router;

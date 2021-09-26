@@ -3,8 +3,12 @@ block products
     div(class="products")
         each product in products 
             div(class="products__product" id=product.id)
-                div(class="close")
-                    i(class="far fa-times-circle")
+                if(title == "Wishlist")
+                    div(class="remove")
+                        i(class="far fa-times-circle")
+                else
+                    div(class="favorite")
+                        i(class="fas fa-heart")
                 img(src=product.image)
                 p=product.title 
                 p=product.price

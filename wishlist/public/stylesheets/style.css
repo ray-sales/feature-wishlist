@@ -75,7 +75,7 @@ header .menu__option i {
     height: 21rem;
 }
 
-.products__product .close {
+.products__product .remove {
     display: flex;
     flex-direction: row-reverse;
     font-size: 1.5rem;
@@ -90,6 +90,25 @@ header .menu__option i {
 .products__product p:last-child {
     margin-top: 2rem;
     color: #e7d51c;
+}
+
+.favorite {
+    width: 2.2rem;
+    height: 3rem;
+    margin-top: -1.25rem;
+    margin-left: -0.7rem;
+    background-color: black;
+    color: #fefaff;
+    border-radius: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    clip-path: polygon(0 0, 100% 0, 100% 79%, 50% 100%, 0 79%)
+}
+
+.favorite--selected {
+    color: red;
 }
 
 @media(min-width: 800px) {
