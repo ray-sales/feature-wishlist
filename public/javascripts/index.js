@@ -1,7 +1,7 @@
 const DOM = {
     addEvents() {
         try {
-            if (window.location.href.includes("wishlist"))
+            if (window.location.href.includes("/wishlist"))
                 Wishlist.addEvent(".favorite-remove");
             else
                 Wishlist.addEvent(".favorite");
@@ -99,7 +99,7 @@ const App = {
         this.home();
     },
     home() {
-        if (!window.location.href.includes("wishlist"))
+        if (!window.location.href.includes("/wishlist"))
             Wishlist.active();
     },
 }
