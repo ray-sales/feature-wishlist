@@ -9,7 +9,7 @@ web app que visa funcionalidades contidas em uma lista de desejos. Segue abaixo 
 * cópia automática do telefone de atendimento;
 * busca da cidade o usuário caso possua permissão
 
-## Instalação e Execução do projeto
+## :arrow_forward: Instalação e Execução do projeto
 
  Para iniciar o projeto, é necessário possuir os seguintes requisitos instalados:
 
@@ -33,7 +33,7 @@ O projeto está configurado para executar localmente em: http://localhost:3000
 
 
 
-## API Reference
+## :books: API Reference
 
 #### Página com todos os produtos
 
@@ -75,7 +75,7 @@ Os produtos são renderizados juntamente com o carregamento da página principal
   GET /api/wishlist
 ```
 
-   ## Tecnologias utilizadas
+   ## :hammer_and_wrench: Tecnologias utilizadas
 
 * NodeJS
 * ExpressJS
