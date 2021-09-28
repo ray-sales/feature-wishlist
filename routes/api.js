@@ -42,6 +42,7 @@ router.get("/wishlist", (req, res) => {
         let products = []
         if (req.cookies && req.cookies.products)
             products = JSON.parse(req.cookies.products);
+
         res.status(200).send(products);
     } catch (e) {
         console.log(e);
