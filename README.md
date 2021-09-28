@@ -9,9 +9,9 @@ web app que visa funcionalidades contidas em uma lista de desejos. Segue abaixo 
 * cópia automática do telefone de atendimento;
 * busca da cidade o usuário caso possua permissão
 
-## :arrow_forward: Instalação e Execução do projeto
+## :arrow_forward: Instalação, Teste e Execução do projeto
 
- Para iniciar o projeto, é necessário possuir os seguintes requisitos instalados:
+ Para iniciar o projeto, é necessário possuir os seguintes pré-requisitos instalados:
 
 * NodeJS
 
@@ -26,7 +26,9 @@ Em seguida, após o término da instalação acima, inicie o projeto com o coman
 
 O projeto está configurado para executar localmente em: http://localhost:3000
 
+Para executar o teste, execute o comando abaixo:
 
+    npm test
 
 
 
@@ -74,6 +76,17 @@ Os produtos são renderizados juntamente com o carregamento da página principal
 ```http
   GET /api/wishlist
 ```
+
+#### Retornar cidade a partir da latitude e longitude
+
+```http
+  GET /api/get-city
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `lat`      | `number` | **Obrigatório** latitude |
+| `long`      | `number` | **Obrigatório** longitude |
 
    ## :hammer_and_wrench: Tecnologias utilizadas
 
