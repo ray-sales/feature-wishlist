@@ -77,6 +77,21 @@ const Wishlist = {
 
 }
 
+const Geocode = {
+    setCity() {
+        try {
+            navigator.geolocation.getCurrentPosition(res => {
+                let { latitude, longitude } = res.coords;
+                data = Utils.fetch(`/api/get-city?lat=${latitude}&long=${longitude}`, "GET").then(json => {
+                    document.getElementById("cityName").textContent = `cidade: ${json.town}`;
+                })
+            })
+        } catch (e) {
+            console.error("ERROR IN SET CITY: " + e);
+        }
+    }
+}
+
 const Utils = {
     fetch(url, type, body = null) {
         return fetch(url, {
@@ -96,6 +111,7 @@ const Utils = {
 const App = {
     init() {
         DOM.addEvents();
+        Geocode.setCity();
         this.home();
     },
     home() {

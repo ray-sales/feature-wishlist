@@ -1,9 +1,12 @@
+const { default: axios } = require('axios');
 var express = require('express');
-
+require('dotenv/config');
 var router = express.Router();
 
 router.post("/add-wishlist", (req, res) => {
     try {
+        console.log("### req");
+        console.log(req.body);
         if (!req.body) {
             throw new Error("id is required in requisition body!");
         }
@@ -46,6 +49,19 @@ router.get("/wishlist", (req, res) => {
             products = JSON.parse(req.cookies.products);
         console.log(products)
         res.send(products);
+    } catch (e) {
+        console.log(e);
+    }
+})
+
+router.get("/get-city", (req, res) => {
+    try {
+        let lat = req.query.lat;
+        let long = req.query.long;
+        axios.get(`${process.env.GEOCODE_URL}?key=${process.env.GEOCODE_KEY}&q=${lat}%2C${long}`).then((data) => {
+            console.log(data);
+            res.send({ "town": data.data.results[0].components.town, "state": data.data.results[0].components.state_code });
+        })
     } catch (e) {
         console.log(e);
     }
