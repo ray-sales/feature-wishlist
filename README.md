@@ -96,3 +96,5 @@ Os produtos são renderizados juntamente com o carregamento da página principal
 * SASS - SCSS
 * Axios
 * Gerenciamento de Cookies
+* Jest
+* Supertest
