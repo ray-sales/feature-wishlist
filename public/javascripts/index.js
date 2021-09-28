@@ -13,11 +13,11 @@ const DOM = {
                 window.location.href = window.location.origin + `/search?content=${content}`;
             });
 
-            let telephone = document.querySelector(".fa-phone-alt");
-            telephone.parentElement.addEventListener("click", () => {
-                let phone = '0800 060 080';
-                navigator.clipboard.writeText(phone);
-                alert("Copied to clipboard: " + phone);
+            let phone = document.querySelector(".fa-phone-alt");
+            phone.parentElement.addEventListener("click", () => {
+                let phoneNumber = '0800 060 080';
+                navigator.clipboard.writeText(phoneNumber);
+                alert("Copied to clipboard: " + phoneNumber);
             })
         } catch (e) {
             console.error("ERROR IN ADD EVENTS: " + e);
