@@ -1,0 +1,17 @@
+
+block products
+    if(!products.length)
+        h3(id="emptyList")="Sua lista está vazia. Não há produtos a serem exibidos."
+    div(class="products-container")
+        each product in products 
+            div(class="product" id=product.id)
+                if(title == "Wishlist")
+                    div(class="favorite-remove")
+                        i(class="far fa-times-circle")
+                else
+                    div(class="favorite")
+                        i(class="fas fa-heart")
+                img(src=product.image)
+                p=product.title 
+                - money = product.price.toLocaleString("pt-BR", {style: 'currency', currency: "BRL"})
+                p=money
