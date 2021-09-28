@@ -1,5 +1,7 @@
 
 block products
+    if(!products.length)
+        span="teste"
     div(class="products-container")
         each product in products 
             div(class="product" id=product.id)

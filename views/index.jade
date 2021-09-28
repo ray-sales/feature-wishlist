@@ -2,7 +2,13 @@ extends layout
 
 block main
   main
-    h3=breadcump
+    section(class="breadcump")
+      each item, index in breadcump
+        - link = (item == "Home") ? "/" : item == "Wishlist" ? "/wishlist" : ""
+        if(index != breadcump.length-1)
+          - item = item + " > "
+        a(href=link)
+          span=item
     include ./products
 
     

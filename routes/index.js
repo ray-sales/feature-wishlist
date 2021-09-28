@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
             .then(data => {
                 res.render('index', {
                     title: 'Home',
-                    breadcump: 'Home',
+                    breadcump: ['Home'],
                     products: data.data.products
                 })
             })
@@ -30,14 +30,14 @@ router.get("/wishlist", (req, res) => {
 
                 res.render('index', {
                     title: 'Wishlist',
-                    breadcump: 'Home > Wishlist',
+                    breadcump: ['Home', 'Wishlist'],
                     products: products,
                 })
             })
         else
             res.render('index', {
                 title: 'Wishlist',
-                breadcump: 'Home > Wishlist',
+                breadcump: ['Home', 'Wishlist'],
                 products: []
             })
     } catch (e) {
@@ -58,7 +58,7 @@ router.get("/search", (req, res) => {
 
                 res.render('index', {
                     title: 'Search',
-                    breadcump: `Home > resultados para '${searchContent}'`,
+                    breadcump: ['Home', `resultados para '${searchContent}'`],
                     products: results
                 })
             })

@@ -72,6 +72,10 @@ body main {
   padding: 2rem 1rem 1rem 1rem;
   width: min(90vw, 910px);
 }
+body main .breadcump a {
+  color: black;
+  font-weight: bold;
+}
 body main .products-container {
   width: 100%;
   margin-top: 2rem;
