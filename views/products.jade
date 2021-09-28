@@ -1,7 +1,7 @@
 
 block products
     if(!products.length)
-        span="teste"
+        h3(id="emptyList")="Sua lista está vazia. Não há produtos a serem exibidos."
     div(class="products-container")
         each product in products 
             div(class="product" id=product.id)
