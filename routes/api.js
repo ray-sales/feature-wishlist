@@ -54,7 +54,7 @@ router.get("/get-city", function(req, res, next) {
         let lat = req.query.lat;
         let long = req.query.long;
         axios.get(`${process.env.GEOCODE_URL}?key=${process.env.GEOCODE_KEY}&q=${lat}%2C${long}`).then((data) => {
-            res.status(200).send({ "town": data.data.results[0].components.town, "state": data.data.results[0].components.state_code });
+            res.status(200).send({ "town": data.data.results[0].components.city_district, "state": data.data.results[0].components.state_code });
         })
     } catch (e) {
         console.log(e);
